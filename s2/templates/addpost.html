@@ -1,0 +1,48 @@
+{% extends 'index.html'%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="{% url 'add'%}" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <input type="text" class="form-control" name="tittle" placeholder="Blog Tittle">
+                <input type="file" class="form-control" name="myfile">
+           
+                <select class="form-select form-select-lg mb-3"  name="category" aria-label=".form-select-lg example">
+                  {% for i in cat %} 
+                  <option value="{{i.category}}">{{i.category}}</option>
+                  {%endfor%}
+                </select>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" name="para" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Write about your blog  Something</label>
+                  </div>
+                <input type="submit" value="submit">
+            </form>
+
+        </div>
+        <div class="col-sm-6">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"> Name Of your post</th>
+                    <th scope="col">Delete</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for i in post %}
+                  <tr>
+                      <form  action="{% url 'del' i.id %}" method="POST">
+                          {%csrf_token%}
+                    <th scope="row">{{i.title}}</th>
+                    <td><button type="submit" class="btn btn-danger" value="{{i.id}}">Delete</button></td>
+                    </form>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    position:relative;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+.content{
+    display: flex;
+    justify-self: center;
+    margin-left:140px;
+   
+}
+footer{
+    background-color:grey;
+    width:auto;
+    height:auto;
+    align-self: baseline;
+    position: relative;
+}
+.enquiryform{
+    margin-left: 100px;
+    margin-top:20px;
+    box-shadow:grey;
+}
+.inqe{
+    margin-top: 20px;
+    width:600px;
+    height: 120 px;
+    border-radius: 10px;
+    border: none;
+}
+.inqt{
+    margin-top: 20px;
+    width:600px;
+    height: 100px;
+    background-color:rgb(243, 232, 232);
+    border-radius: 10px;
+}
+.btn{
+    border: hsla(hue, saturation, lightness, alpha);
+    background-color:lightblue;
+    margin-left: 1px;
+    width:200px;
+    margin-left: 100px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+
+}
+.btn:hover{
+    background-color:blue;
+}
+.media{
+    margin-left:550px;
+    
+}
+.navbar{
+    position: sticky;
+}
+.l{
+    color:lightgray;
+    text-decoration: none;
+    margin-left:-28px;
+    margin-top: -9px;
+}
+.m{
+    display: inline;
+    color: whitesmoke;
+    
+    display: block;
+}
+.snp{
+    color:white;
+}
+.fb{
+    color:white;
+}
+.inst{
+    color:white;
+}
+.env{
+    color:white;
+}
+.snapchat{
+    text-decoration: none;
+}
+.fk{
+    text-decoration: none;
+}
+.instagram{
+    text-decoration: none;
+}
+.Email{
+    text-decoration: none;
+}
+.snp:hover{
+    color: yellow;
+}
+.fb:hover{
+    color: lightskyblue;
+}
+.inst:hover{
+    color:#ce3e3e;
+}
+.env:hover{
+    color:rgb(255, 0, 0);}
+
+.content{
+    opacity: 1;
+    height:200px ;
+}
+.d-flex{
+    margin-left:990px;
+}
+.login{
+    justify-self: center;
+    margin-left:500px;
+    background-color: lightgreen;
+    max-width: 400px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-top: 200px;
+    height: 500px;
+    
+}
+.register{
+    margin-left:400px;
+}
+.cmnt{
+    margin-left: 2px;
+}

@@ -1,0 +1,43 @@
+{% extends 'index.html'%}
+{%block content%}
+{{msg}}
+<div class="container">
+    <div class="row">
+        {% for i in p%}
+        <div class="col-sm-1"></div>
+      
+
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem; margin-top: 40px;">
+             <div class="card-title mx-5">
+              <h5>{{i.title}}</h5>
+            </div>
+            <a href="{% url 'full' i.id%}"> <img src="{{i.Image.url}}" class="card-img-top" height="200px;" alt="..."></a>
+          <div class="card-body">
+            <p class="card-text">{{i.post|truncatechars:50}}</p>
+            <div>
+              <small>{{i.user}}</small>
+            </div>
+            <div>
+              <small>{{i.cate}}</small>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+
+      </div>
+      {% endfor%}
+  </div>
+  </div>
+{%endblock%}

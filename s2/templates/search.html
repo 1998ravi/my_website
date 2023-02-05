@@ -1,0 +1,40 @@
+{%extends 'index.html' %}
+{%block content%}
+<div>
+    <form action="{% url 'srch'%}" method="POST">
+        {%csrf_token%}
+    <input type="search"  class="form-control" style="width: 200px; margin-left:100px;" name="serch">
+    <button type="submit" class="btn btn-succes"  style="height: 50px;">Search</button>
+    </form>
+</div>
+
+<div class="content ">
+
+    <div class="container">
+      <div class="row">
+        {% if allpost%}
+        <h2>Your Serach result :</h2>
+        {% for i in allpost%}
+          <div class="col-sm-1"></div>
+
+        <div class="col-sm-4">
+          <div class="card" style="width: 18rem; margin-top: 40px;">
+               <div class="card-title mx-5">
+                <h5>{{i.title}}</h5>
+              </div>
+              <a href="{% url 'full' i.id%}"> <img src="{{i.Image.url}}" class="card-img-top" height="200px;" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text">{{i.post|truncatechars:50}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        {% endfor%}
+       
+        {%endif%}
+    </div>
+    </div>
+    </div>
+{%endblock%}

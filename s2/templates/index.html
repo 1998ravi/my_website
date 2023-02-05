@@ -1,0 +1,132 @@
+<html>
+    <head>
+        {% load static %}
+         <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'k.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <title>
+    </title>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color:lightblue;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Daily Blogging</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{%  url 'show' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'srch' %}">Search</a>
+            </li>
+          
+          <form class="d-flex">
+            {% if request.session.name %}
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'mylogout'%}">Logout</a>
+            </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'mylogin'%}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="{% url 'register'%}">Register</a>
+          </li>
+          {% endif %}
+          </form>
+         <li style="float: right;">
+         
+         </li>
+      </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    {%block content %}
+      <div class="content">
+      <div class="container">
+        <div class="row" style="text-align: center;">
+            {% for i in p%}
+            <div class="col-sm-1"></div>
+
+          <div class="col-sm-4">
+            <div class="card" style="width: 18rem; margin-top: 40px;">
+                 <div class="card-title mx-5">
+                  <h5>{{i.title}}</h5>
+                </div>
+                <a href="{% url 'full' i.id%}"> <img src="{{i.Image.url}}" class="card-img-top" height="200px;" alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">{{i.post|truncatechars:50}}</p>
+                <div>
+                  <small>{{i.user}}</small>
+                </div>
+                <div>
+                  <small>{{i.cate}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+
+          </div>
+          {% endfor%}
+      </div>
+      </div>
+      </div>
+    {%endblock%}
+    <br>
+    <div  class="container-fluid">
+      <div class="row" style="background-color: lightblue;">
+        <div class="col-sm-1">
+          
+        </div>
+        <div class="col-sm-5" style="text-align:center">
+          <form action="{% url 'enquiry' %}" method='POST' class="enquiryform">
+            {%csrf_token%}
+            <h2 style="color:black;">Enquiry About Us</h2>
+            <input type="email" name="emg" class=" form-control inqe" style="height: 50px; background-color: white;" placeholder="Enter Your Email">  
+            <br>
+            <textarea class=" form-control inqt" name="inq" placeholder="Enquire About Us">
+            </textarea>
+            <br>
+            <button type="submit" class="sbtn" style="color: black; border-radius: 5px; ">
+              Send Enquiry
+            </button>
+          </form>
+        </div>
+        <div class="col-sm-1" style="text-align:center;">
+         
+        </div>
+        <div class="col-sm-5">
+          <h1 class="fh" style="color:black;">Follow Us!</h1>
+          <br>
+          <nav>
+            <ul><li style="list-style: none;">Email:xxxx@y.com</h4></li></ul>
+            <ul><li style="list-style: none;">Phone:9999-999-999</li></ul>
+          </nav>
+          <br>
+          <ul>
+         <a href="" class="snapchat"> <li class="m" style="color: black;"> <i class="fa fa-snapchat-square  snp" style="color: black;"></i>&nbsp;&nbsp;&nbsp;Snapchat</li></a>
+         <a href="" class="fk"><li class="m" style="color: black;"><i class="fa fa-facebook fb" style="color: black;"></i> &nbsp;&nbsp;&nbsp;facebook</li></a>
+         <a href="" class="instagram"><li class="m" style="color: black;"> <i class="fa fa-instagram inst" style="color: black;" ></i> &nbsp;&nbsp;&nbsp;Instagram</li></a>
+         <a href="" class="Email"><li class="m" style="color: black;"> <i class="fa fa-envelope-square env" aria-hidden="true" style="color:black;"></i></i> &nbsp;&nbsp;&nbsp;E-mail</li></a>  
+          </ul>
+      
+         
+        </div>
+      </div>
+    </div>
+
+  
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </body>
+</html>

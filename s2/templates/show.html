@@ -1,0 +1,21 @@
+{%extends 'index.html'%}
+{%block content%}
+<h1>{{p.title}}</h1>
+<br>
+<div style="display:flex; align-content: center;">
+<img src="{{p.Image.url}}" style="max-width: 400px; max-height: 400px;"></a></div>
+<p>{{p.post}}</p>
+<form action="{% url 'comments'%}" method="POST">
+{%csrf_token%}
+<label>Enter Your Valueble Comments</label>
+<textarea name="cmnt" class="form-control" style="max-width: 300px;"></textarea><br>
+<button type="submit" class="btn" name="o" value={{p.id}}> Submit Your Comments</button>
+</form>
+<p>comments({{k}})</p>
+{% for i in c%}
+<div class="cmnt">
+<p style="margin-left: 25px; margin-left:2px;">{{i.commets}}</p>
+<h5>by {{i.name}}</h5>
+<br></div>
+{% endfor%} 
+{%endblock%}

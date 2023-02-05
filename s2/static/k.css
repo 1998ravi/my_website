@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login{
+    justify-self: center;
+    margin-left:500px;
+    background-color: lightgreen;
+    max-width: 400px;
+    border-radius: 10px;
+    justify-content: center;
+    
+    height: 500px;
+    
+}
+.register{
+    margin-left:400px;
+}
+.cmnt{
+    margin-left: 2px;
+}
+
+
+.media{
+    margin-left:550px;
+    
+}
+
+.l{
+    color:black;
+    text-decoration: none;
+  
+    margin-top: -9px;
+}
+.m{
+    display: inline;
+    color: whitesmoke;
+    
+    display: block;
+}
+.snp{
+    color:white;
+}
+.fb{
+    color:white;
+}
+.inst{
+    color:white;
+}
+.env{
+    color:white;
+}
+.snapchat{
+    text-decoration: none;
+}
+.fk{
+    text-decoration: none;
+}
+.instagram{
+    text-decoration: none;
+}
+.Email{
+    text-decoration: none;
+}
+.snp:hover{
+    color: yellow;
+}
+.fb:hover{
+    color: lightskyblue;
+}
+.inst:hover{
+    color:#ce3e3e;
+}
+.env:hover{
+    color:rgb(255, 0, 0);}
+    .btn{
+        border: hsla(hue, saturation, lightness, alpha);
+        background-color:lightblue;
+        margin-left: 1px;
+        width:200px;
+        margin-left: 100px;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    
+    }
+    .btn:hover{
+        background-color:blue;
+    }
+    
+
+   .srch :hover{
+       width: 1000px;
+   }
+.m-vtn{
+    background-color: black;
+    border-radius: 5px;
+}
